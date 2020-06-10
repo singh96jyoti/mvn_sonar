@@ -9,7 +9,7 @@ pipeline {
         	stage('Build') {
 	            	steps {
 		            	   withSonarQubeEnv('sonar') {
-			            	sh '/opt/maven/bin/mvn clean install sonar:sonar -Dmaven.test.skip=true'
+			            	sh '/opt/maven/bin/mvn clean install -Dmaven.test.skip=true'
 		            	}
 		            	}}
 		   	stage("Quality Gate") {
